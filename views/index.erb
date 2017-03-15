@@ -1,1 +1,49 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WELCOME TO PET FINDER</title>
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+  </head>
+  <body>
+
+    <form action="session/new" method="get">
+      <button>LOGIN</button>
+
+
+    <form class="signup" action="/session" method="post">
+
+      <label>first name</label>
+      <input type="text" name="first_name" >
+
+      <label>last Name</label>
+      <input type="text" name="last_name" >
+
+      <label>email</label>
+      <input type="text" name="email" >
+
+      <label>password</label>
+      <input type="password" name="password" >
+
+      <button>sign up here</button>
+    </form>
+
+    <% @lost_pets.each do |lost_pet| %>
+
+    <h2>
+      <a href="/lost_pets/<%= lost_pet['id'] %>">
+        <%= lost_pet["pet_name"] %>
+      </a>
+    </h2>
+
+    <img src="<%= lost_pet['image_url'] %>" alt="">
+
+    <% end %>
+
+
+      <div id="map"></div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZdCsjrW3IViy59CQQJet2cFb_bTRrJ_Q&callback=initMap"async defer></script>
+  </body>
+</html>

@@ -2,27 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GARAGE SALE</title>
+  <title>PET FINDER</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 </head>
 <body>
 
-  <% if logged_in? %>
-logged in as <%=  current_user.email %>
-<form action='/session' method='post'>
-  <input type="hidden" name="_method" value="delete">
-  <button>logout</button>
-</form>
-  <% end %>
-session: <%= session[:user_id] %>
+  <h1><a href="/">LOST PET LOGO</a></h1>
 
-<div id="map"></div>
+
+
 
 
 
   <%= yield %>
 
-
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZdCsjrW3IViy59CQQJet2cFb_bTRrJ_Q&callback=initMap"async defer></script>
-</body>
+  <script src="/javascripts/application.js"></script>
+  </body>
+</html>

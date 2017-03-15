@@ -1,0 +1,34 @@
+<form action="/lost_pets/<%= @lost_pet.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <label>Name</label>
+    <input type="text" name="dish_name" value="<%= @dish['name'] %>">
+
+    <label for="">Image Url</label>
+    <input type="text" name="image_url" value="<%= @dish['image_url']  %>">
+
+
+
+    <label>pet name</label>
+    <input name="pet_name" type="text" value="<lost_pet['pet_name']">
+
+    <label>Address Line 1</label>
+    <input name="address_line_1" type="text">
+
+    <label>Address Line 2</label>
+    <input name="address_line_2" type="text">
+
+    <label>postcode</label>
+    <input name="address_line_1" type="number">
+
+    <label>City</label>
+    <input name="city" type="text">
+
+    <label>Date</label>
+    <input name="lost_date" type="date">
+
+    <label for="">Image</label>
+    <input type="text" name="image_url" value="<%= @pet['image_url']  %>">
+
+    <button>update</button>
+</form>
