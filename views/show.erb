@@ -2,6 +2,10 @@
 
 <img src="<%= @lost_pet['image_url'] %>" alt="">
 
+<p>
+  went missing on <%= @lost_pet. %>
+</p>
+
 <% if logged_in? %>
   <form action="/lost_pets/<%= @lost_pet.id %>/edit">
     <button>edit</button>
