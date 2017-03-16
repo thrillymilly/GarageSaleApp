@@ -30,6 +30,7 @@ var geocoder;
         geocoder.geocode( { address: totalAddress }, function(results, status) {
           // if (status == google.maps.GeocoderStatus.OK) {
             // map.setCenter(results[0].geometry.location);
+
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location //{ lat: -37.814236, lng: 144.955527}

@@ -87,7 +87,6 @@ end
 ### EDIT LOST PET ####
 
 get '/lost_pets/:id/edit' do
-  redirect
   @lost_pet = LostPet.find(params[:id])
 
   erb :edit
@@ -146,6 +145,13 @@ post '/session' do
     #your password or email were incorrect
     erb :login
   end
+end
+
+#delete post
+post '/lost_pets/:id/delete' do
+  @lost_pet = LostPet.delete(params[:id])
+
+  redirect '/'
 end
 
 #logout
