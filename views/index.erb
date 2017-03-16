@@ -21,17 +21,31 @@
       <label>password</label>
       <input type="password" name="password" >
 
-      <button>sign up here</button>
+      <button onclick="codeAddress()">sign up here</button>
     </form>
 
-    <div id="map"></div>
+
+    <div id="map-canvas">  </div>
 
     <% @lost_pets.each do |lost_pet| %>
 
-      <img src="<%= lost_pet['image_url'] %>" alt="">
+      <img class="pet-image" src="<%= lost_pet['image_url'] %>" alt="">
 
       <a href="/lost_pets/<%= lost_pet['id'] %>">
         <%= lost_pet["pet_name"] %> went missing on <%= lost_pet["lost_date"] %>
+
+        <span class="house-number">
+          <%= lost_pet["house_number"]%>
+        </span>
+
+        <span class="street-name">
+        <%= lost_pet["street_name"] %>
+        </span>
+
+        <span class="postcode">
+        <%= lost_pet["postcode"] %>
+
+        </span>
       </a>
 
 

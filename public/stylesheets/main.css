@@ -11,8 +11,8 @@ header {
   text: #000;
 }
 
-#map {
-      height: 50%;
+#map-canvas {
+      height: 200px;
       width: 50%;
     }
 
