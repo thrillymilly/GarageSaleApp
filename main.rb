@@ -42,8 +42,8 @@ end
 #DISPLAY CLICKED ON DISH#
 
 get '/lost_pets/:id' do
-  @dish = Dish.find(params[:id])
-  @comments = @dish.comments
+  @lost_pet = LostPet.find(params[:id])
+  @comments = @lost_pet.comments
   erb :show
 end
 
@@ -52,9 +52,9 @@ end
 post '/comments' do
   comment = Comment.new
   comment.body = params[:body]
-  comment.dish_id = params[:lost_pet_id]
+  comment.lost_pet_id = params[:lost_pet_id]
   if comment.save
-    redirect to "/lost_pets/#{ params[:dish_id] }"
+    redirect to "/lost_pets/#{ params[:lost_pet_id] }"
   else
     erb :show
   end
@@ -62,11 +62,11 @@ end
 
 ### CREATE NEW LOST PET POST ###
 
-post '/lost_pets' do #creating a
+post '/lost_pets' do
   lost_pet = LostPet.new
   lost_pet.pet_name = params[:pet_name]
-  lost_pet.address_line_1 = params[:address_line_1]
-  lost_pet.address_line_2 = params[:address_line_2]
+  lost_pet.house_number = params[:house_number]
+  lost_pet.street_name = params[:street_name]
   lost_pet.postcode = params[:postcode]
   lost_pet.city = params[:city]
   lost_pet.lost_date = params[:lost_date]
@@ -112,7 +112,7 @@ get '/' do
   erb :signup
 end
 
-post '/' do
+post '/signup' do
   user = User.new
   user.first_name = params[:first_name]
   user.second_name = params[:second_name]
@@ -123,17 +123,10 @@ post '/' do
 
   if user.save
 
-    redirect '/'
-  else
-      erb :signup
+    redirect '/session/new'
   end
 end
 
-get '/dashboard' do
-
-  erb :dashboard
-
-end
 
 ### LOGIN/LOGOUT SESSION ###
 
@@ -148,7 +141,7 @@ post '/session' do
     #you are ok, let me create a session for you
     session[:user_id] = user.id
 
-    redirect 'dashboard'
+    redirect '/'
   else
     #your password or email were incorrect
     erb :login

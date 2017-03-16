@@ -1,14 +1,17 @@
-<h2><%= @lost_pet.name %></h2>
+<h2><%= @lost_pet.pet_name %></h2>
 
-
-<form action="/lost_pets/<%= @lost_pet.id %>/delete" method="post">
-  <img src="<%= @lost_pet['image_url'] %>" alt="">
-  <button>delete</button>
-
-</form>
+<img src="<%= @lost_pet['image_url'] %>" alt="">
 
 <% if logged_in? %>
-<a href="/lost_pets/<%= @lost_pet.id %>/edit">edit</a>
+  <form action="/lost_pets/<%= @lost_pet.id %>/edit">
+    <button>edit</button>
+  </form>
+
+  <form action="/lost_pets/<%= @lost_pet.id %>/delete" method="post">
+    <button>delete</button>
+
+  </form>
+
 <% end  %>
 
 <% @lost_pet.comments.each do |comment| %>

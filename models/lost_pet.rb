@@ -1,6 +1,6 @@
 class LostPet < ActiveRecord::Base
 has_many :comments
 
-validates :name, presence: true
+validates :pet_name, presence: true
 
 end

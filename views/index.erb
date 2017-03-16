@@ -7,16 +7,12 @@
   </head>
   <body>
 
-    <form action="session/new" method="get">
-      <button>LOGIN</button>
-
-
-    <form class="signup" action="/session" method="post">
+    <form class="signup" action="/signup" method="post">
 
       <label>first name</label>
       <input type="text" name="first_name" >
 
-      <label>last Name</label>
+      <label>last name</label>
       <input type="text" name="last_name" >
 
       <label>email</label>
@@ -28,20 +24,21 @@
       <button>sign up here</button>
     </form>
 
+    <div id="map"></div>
+
     <% @lost_pets.each do |lost_pet| %>
 
-    <h2>
-      <a href="/lost_pets/<%= lost_pet['id'] %>">
-        <%= lost_pet["pet_name"] %>
-      </a>
-    </h2>
+      <img src="<%= lost_pet['image_url'] %>" alt="">
 
-    <img src="<%= lost_pet['image_url'] %>" alt="">
+      <a href="/lost_pets/<%= lost_pet['id'] %>">
+        <%= lost_pet["pet_name"] %> went missing on <%= lost_pet["lost_date"] %>
+      </a>
+
 
     <% end %>
 
 
-      <div id="map"></div>
+
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZdCsjrW3IViy59CQQJet2cFb_bTRrJ_Q&callback=initMap"async defer></script>

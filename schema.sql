@@ -1,20 +1,19 @@
-CREATE TABLE garage_sale (
+CREATE TABLE lost_pets (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR (400) NOT NULL,
-  event_name VARCHAR (400) NOT NULL,
-  address_line_1 VARCHAR (400)NOT NULL,
-  address_line_2 VARCHAR (400) NOT NULL,
+  pet_name VARCHAR (400) NOT NULL,
+  house_number INTEGER NOT NULL,
+  street_name VARCHAR (400) NOT NULL,
   postcode INTEGER NOT NULL,
   city VARCHAR (400) NOT NULL,
-  sale_time TIME(4) NOT NULL,
-  sale_date DATE NOT NULL,
+  lost_date DATE NOT NULL,
   user_id INTEGER,
-  category_id INTEGER
+  category_id INTEGER,
+  image_url TEXT
   );
 
 CREATE TABLE category (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR (400)
+  breed VARCHAR (400)
 );
 
 CREATE TABLE users (
