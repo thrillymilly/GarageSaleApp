@@ -3,21 +3,37 @@ html, body {
        margin: 0;
        padding: 0;
        font-family: 'Droid Sans', sans-serif;
-
+       background-color: #FFE4E1
      }
 
 header {
-  background-color: #4286f4;
+  background-color: #FFE4E1;
   text: #000;
+  font-family: 'Pacifico';
+  display: block;
 }
 
 #map-canvas {
-      height: 200px;
+      height: 400px;
       width: 50%;
+      display: block;
+      margin: 5em auto;
     }
 
-img {
-    height: 15%;
+.logo {
+  width: 30%;
+}
+
+.pets-list {
+  height: 30%;
+  display: block;
+  margin: 5em auto;
+
+}
+
+.pet-image {
+    height: 100px;
     border: 2px solid black;
     border-radius: 25px;
+    display: inline-block;
 }
